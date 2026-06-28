@@ -1,0 +1,110 @@
+# Final Recommendation
+
+## Executive Summary
+
+Based on the regression analysis, the **Multiple Regression Model** was selected as the final model because it explains approximately **79.15% of the variation in monthly sales (R² = 0.7915)**. This model provides a much stronger understanding of sales performance than the individual simple regression models and is therefore the most suitable model for business planning and forecasting.
+
+---
+
+# 1. Which factors appear most strongly associated with monthly sales?
+
+The regression analysis identified the following variables as the strongest predictors of monthly sales:
+
+### 1. Footfall
+
+* Coefficient: **29.6126**
+* P-value: **6.31 × 10⁻²⁴**
+
+Footfall has the strongest positive relationship with sales. Every additional customer visiting the store is associated with an increase of approximately **29.61 units** in monthly sales, while holding other variables constant.
+
+### 2. Marketing Spend
+
+* Coefficient: **1.1367**
+* P-value: **4.89 × 10⁻¹⁵**
+
+Marketing spend also has a statistically significant positive relationship with sales. Increased marketing investment is associated with higher monthly sales after accounting for other variables.
+
+### 3. Store Type (Dummy Variable)
+
+* Coefficient: **−9,458.50**
+* P-value: **0.00055**
+
+Store type significantly affects sales performance. The negative coefficient indicates that the comparison store type generates lower sales than the reference store type, suggesting that location or store format influences revenue.
+
+---
+
+# 2. Which variables should leadership focus on?
+
+Leadership should prioritize the variables that show both statistical significance and practical business impact.
+
+### Increase Customer Footfall
+
+Footfall is the strongest driver of sales. The company should focus on attracting more customers through promotions, loyalty programs, improved customer experience, and local marketing initiatives.
+
+### Optimize Marketing Investment
+
+Marketing spend has a positive impact on sales. Rather than simply increasing the marketing budget, leadership should monitor campaign performance and invest in channels that generate the highest return.
+
+### Evaluate Store Type Performance
+
+The significant effect of store type suggests that different store formats perform differently. Leadership should review the operational strategies of lower-performing store types and identify best practices from higher-performing stores.
+
+---
+
+# 3. Which variables should not be over-interpreted?
+
+### Staff Count
+
+Although Staff Count has a positive coefficient (2,293.57), its **p-value of 0.0945** exceeds the conventional significance level of 0.05.
+
+This indicates that there is insufficient statistical evidence to conclude that increasing staff alone will consistently increase monthly sales after accounting for the other variables.
+
+Leadership should therefore avoid making staffing decisions based solely on this model.
+
+---
+
+# 4. What business action would you recommend?
+
+Based on the regression findings, the following actions are recommended:
+
+* Increase initiatives that drive customer footfall, such as promotional events, customer loyalty programs, and improved in-store experiences.
+* Continue investing in marketing while regularly measuring campaign effectiveness and return on investment.
+* Analyze performance differences across store types and replicate successful operational practices where possible.
+* Use the multiple regression model as a forecasting tool to support budgeting, sales planning, and resource allocation.
+* Continue collecting additional business data to further improve future predictive models.
+
+---
+
+# 5. What risks or limitations should leadership keep in mind?
+
+Although the multiple regression model performs well, several limitations should be considered:
+
+* Approximately **20.85%** of sales variation remains unexplained.
+* External factors such as seasonality, competitor activities, promotions, weather conditions, local economic changes, and customer demographics were not included in the model.
+* Relationships identified by the model may change over time as market conditions evolve.
+* Staff Count was not statistically significant and should be interpreted with caution.
+
+Leadership should therefore use regression analysis alongside business knowledge and operational experience rather than relying on it exclusively.
+
+---
+
+# 6. Why does regression show association but not automatically prove causation?
+
+Regression analysis identifies **statistical associations** between variables, but it does not prove that one variable directly causes changes in another.
+
+For example:
+
+* Higher marketing spend is associated with higher sales, but successful stores may also have larger marketing budgets.
+* Higher footfall is associated with increased sales, but customer visits may themselves be influenced by promotions, store location, or seasonal demand.
+
+Therefore, regression results should be interpreted as evidence of relationships rather than proof of direct cause-and-effect.
+
+To establish causation, additional methods such as controlled experiments, A/B testing, or longitudinal studies would be required.
+
+---
+
+# Overall Recommendation
+
+The **Multiple Regression Model** is recommended for business forecasting because it explains approximately **79.15% of the variation in monthly sales** and incorporates multiple important business factors. The analysis indicates that **Footfall**, **Marketing Spend**, and **Store Type** are the most influential predictors of sales, while **Staff Count** does not have a statistically significant independent effect.
+
+Leadership should prioritize initiatives that increase customer visits, optimize marketing investment, and improve the performance of lower-performing store types. Regression analysis should be used as a decision-support tool in combination with business expertise and ongoing performance monitoring.

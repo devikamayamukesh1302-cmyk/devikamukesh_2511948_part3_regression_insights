@@ -1,0 +1,38 @@
+Residual Analysis
+Selected Final Model
+The final model selected is the Multiple Regression Model:
+Predicted Sales =
+410682.43 ? 9458.50(Dummy Store Type) + 1.13667(Marketing Spend) + 29.61260(Footfall) + 2293.57(Staff Count)
+Residuals were calculated using:
+Residual = Actual Sales ? Predicted Sales
+* Positive residual ? Actual sales are higher than predicted (under-prediction).
+* Negative residual ? Actual sales are lower than predicted (over-prediction).
+
+Top 5 Largest Positive Residuals
+RecordStore TypeActual SalesPredicted SalesResidual112Mall713,611.16609,031.27104,579.89104Mall625,514.04525,440.30100,073.74298High Street763,162.45671,196.8991,965.56187High Street765,906.95680,885.9185,021.04254Airport799,046.94715,510.5683,536.38Interpretation
+These stores performed significantly better than predicted by the model.
+Possible reasons include:
+* Successful promotional campaigns
+* Higher customer demand
+* Better product assortment
+* Stronger local market conditions
+* Seasonal events not included in the model
+
+Top 5 Largest Negative Residuals
+RecordStore TypeActual SalesPredicted SalesResidual45Residential595,467.60750,404.52?154,936.9233Residential641,865.03790,665.88?148,800.854Residential658,920.30797,879.76?138,959.4667High Street685,379.08822,395.88?137,016.80137Residential633,638.03761,747.66?128,109.63Interpretation
+These stores generated much lower sales than predicted.
+Possible reasons include:
+* Inventory shortages
+* Increased local competition
+* Poor customer service
+* Operational issues
+* Economic or regional factors not included in the model
+
+Business Interpretation
+The residual analysis shows that although the multiple regression model explains approximately 79.15% of the variation in sales, some stores deviate substantially from the predicted values.
+Large positive residuals indicate stores that outperform expectations, while large negative residuals indicate stores that underperform relative to model predictions.
+
+Model Performance
+The model appears to under-predict sales for several Mall, Airport, and High Street stores, suggesting these locations may benefit from favorable factors not captured in the model.
+Conversely, it tends to over-predict sales for several Residential stores, indicating additional variables such as local demand, customer demographics, competition, or economic conditions may influence performance.
+Overall, the model provides strong predictive capability but could be improved by incorporating additional business variables such as promotions, seasonality, weather, regional economic conditions, and customer demographics.

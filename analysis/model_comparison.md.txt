@@ -1,0 +1,103 @@
+# Model Comparison
+
+## Model 1: Simple Regression – Marketing Spend
+
+**Dependent Variable:** Sales
+
+**Independent Variable:** Marketing Spend
+
+**R-squared:** 0.0663 (6.63%)
+
+**Significant Variables:**
+
+* Marketing Spend (p-value = 3.03 × 10⁻⁶)
+
+**Business Usefulness:**
+
+* Marketing spend has a statistically significant positive relationship with sales.
+* However, it explains only 6.63% of the variation in sales, indicating that it is a weak predictor when used alone.
+* The model can provide limited guidance for marketing budget decisions but should not be used as the sole forecasting tool.
+
+**Limitations:**
+
+* Does not consider other important factors affecting sales.
+* Low explanatory power.
+* Cannot accurately predict sales by itself.
+
+---
+
+## Model 2: Simple Regression – Footfall
+
+**Dependent Variable:** Sales
+
+**Independent Variable:** Footfall
+
+**R-squared:** 0.3500 (35.00%)
+
+**Significant Variables:**
+
+* Footfall (p-value = 1.35 × 10⁻³¹)
+
+**Business Usefulness:**
+
+* Footfall has a strong positive impact on sales.
+* The model explains 35% of sales variation, making it a much better predictor than marketing spend alone.
+* Useful for forecasting sales based on customer traffic.
+
+**Limitations:**
+
+* Ignores marketing activities, staffing, and store characteristics.
+* Additional variables are required for better prediction.
+
+---
+
+## Model 3: Multiple Regression
+
+**Dependent Variable:** Sales
+
+**Independent Variables:**
+
+* Dummy Store Type
+* Marketing Spend
+* Footfall
+* Staff Count
+
+**R-squared:** 0.7915 (79.15%)
+
+**Significant Variables:**
+
+* Dummy Store Type (p = 0.00055)
+* Marketing Spend (p < 0.001)
+* Footfall (p < 0.001)
+
+**Statistically Weak Variable:**
+
+* Staff Count (p = 0.0945)
+
+**Business Usefulness:**
+
+* This model explains approximately 79% of the variation in sales, providing the highest predictive accuracy.
+* Footfall is the strongest driver of sales.
+* Marketing spend also has a positive and significant impact.
+* Store type influences sales performance.
+* Suitable for forecasting sales and supporting strategic business decisions.
+
+**Limitations:**
+
+* Around 21% of sales variation remains unexplained.
+* External factors such as seasonality, competition, promotions, and economic conditions are not included.
+* Staff count is not statistically significant and should be interpreted with caution.
+
+---
+
+# Overall Comparison
+
+The multiple regression model performs substantially better than both simple regression models. While marketing spend and footfall are individually significant predictors of sales, combining multiple variables increases the explanatory power from 6.63% and 35.00% to 79.15%. Therefore, the multiple regression model is recommended for business forecasting and decision-making because it provides a more comprehensive understanding of the factors influencing sales.
+
+Conclusion
+Best Model: Multiple Regression
+Highest R²: 79.15%
+Most Important Predictor: Footfall
+Marketing Spend: Significant positive effect on sales.
+Staff Count: Positive but not statistically significant (p > 0.05).
+Recommendation: Use the multiple regression model for forecasting and business planning because it explains the largest proportion of variation in sales and incorporates multiple relevant business factors.

@@ -1,0 +1,251 @@
+# Model Equations
+
+## Task 3: Create Dummy Variables
+
+### Objective
+
+Linear regression models require numerical input variables. Since categorical variables such as **Region** and **Store Type** contain text values, they must be converted into numerical variables before model training. This was achieved using **dummy variable encoding (One-Hot Encoding)**.
+
+---
+
+# Categorical Variables Selected
+
+The following categorical variables were encoded:
+
+- Region
+- Store Type
+
+---
+
+# Dummy Variable Creation
+
+## Region
+
+Assume the dataset contains four regions:
+
+- North
+- South
+- East
+- West
+
+The dummy variables created are:
+
+| North - 1
+| South -2
+| East -3
+| West -4
+
+### Reference Category
+
+**West** is used as the **reference category**.
+
+No dummy variable is created for West to avoid multicollinearity (Dummy Variable Trap).
+
+---
+
+## Store Type
+
+ the dataset contains four store types:
+
+- Airport
+- High street
+- Mall
+- Residential
+
+The dummy variables created are:
+
+- Airport-1
+- High street-2
+- Mall-3
+- Residential-4
+
+
+### Reference Category
+
+**Hypermarket** is used as the **reference category**.
+
+Only two dummy variables are included in the regression model.
+
+---
+
+# Why One Category Was Removed
+
+If all categories are included in a regression model, one variable becomes a perfect linear combination of the others. This causes **perfect multicollinearity**, also known as the **Dummy Variable Trap**.
+
+To prevent this issue:
+
+- One category from each categorical variable was selected as the **reference category**.
+- The regression coefficients of the remaining dummy variables are interpreted relative to the reference category.
+
+---
+
+# Regression Model Example
+
+After dummy variable encoding, the regression equation becomes:
+
+Monthly Profit =
+β₀
++ β₁(Marketing Spend)
++ β₂(Footfall)
++ β₃(Discount)
++ β₄(Customer Rating)
++ β₅(Monthly Sales)
++ β₆(Region_North)
++ β₇(Region_South)
++ β₈(Region_East)
++ β₉(Store_Supermarket)
++ β₁₀(Store_Convenience)
++ ε
+
+Where:
+
+- β₀ = Intercept
+- β₁ … β₁₀ = Regression coefficients
+- ε = Error term
+
+---
+
+# Interpretation Example
+
+Suppose:
+
+- β₆ = 2,500
+
+This means:
+
+> Stores located in the **North** are expected to generate **2,500 more monthly profit** than stores in the **West** (reference category), assuming all other variables remain constant.
+
+Similarly,
+
+- β₉ = 1,200
+
+indicates that **Supermarkets** earn approximately **1,200 more monthly profit** than **Hypermarkets**, holding other variables constant.
+
+---
+
+# Summary
+
+The categorical variables were successfully converted into dummy variables using One-Hot Encoding. One category from each variable was excluded and used as the reference category to avoid the Dummy Variable Trap. This approach ensures that the regression model remains statistically valid while allowing meaningful interpretation of categorical effects on monthly profit.
+
+
+
+# Model Equations
+
+## 1. Simple Regression Model 1 – Marketing Spend
+
+### Regression Equation
+
+**Sales = 91,167.69 + 0.36249 × Marketing Spend**
+
+### Coefficient Explanation
+
+* **Intercept (91,167.69):** Represents the estimated sales when marketing spend is zero. It serves as the baseline sales value.
+* **Marketing Spend Coefficient (0.36249):** For every additional 1 unit spent on marketing, sales are expected to increase by approximately **0.36 units**, assuming no other factors are considered.
+
+### Business Interpretation
+
+Marketing spend has a positive relationship with sales. Increasing the marketing budget is associated with higher sales, but this model explains only a small portion of sales variation (R² = 6.63%). Therefore, marketing spend alone is not sufficient for accurate sales forecasting.
+
+---
+
+# 2. Simple Regression Model 2 – Footfall
+
+### Regression Equation
+
+**Sales = 67,928.67 + 6.64753 × Footfall**
+
+### Coefficient Explanation
+
+* **Intercept (67,928.67):** Represents the estimated sales when customer footfall is zero.
+* **Footfall Coefficient (6.64753):** Every additional customer entering the store increases expected sales by approximately **6.65 units**.
+
+### Business Interpretation
+
+Footfall has a strong positive effect on sales. Stores with more customer visits generally generate higher sales. Compared with marketing spend, footfall is a much stronger predictor of sales.
+
+---
+
+# 3. Multiple Regression Model
+
+### Regression Equation
+
+**Sales = 410,682.43 − 9,458.50 × Dummy Store Type + 1.13667 × Marketing Spend + 29.61260 × Footfall + 2,293.57 × Staff Count**
+
+---
+
+## Explanation of Each Coefficient
+
+### Intercept (410,682.43)
+
+This is the estimated baseline sales when all predictor variables are zero. Although this situation is unlikely in practice, it provides the starting point for the regression equation.
+
+---
+
+### Dummy Store Type (-9,458.50)
+
+The dummy variable represents different store types.
+
+The coefficient indicates that stores belonging to the coded dummy category are expected to generate approximately **9,458 fewer sales units** than the reference store type, assuming all other variables remain constant.
+
+---
+
+### Marketing Spend (1.13667)
+
+For every additional unit invested in marketing, expected sales increase by approximately **1.14 units**, while keeping all other variables constant.
+
+---
+
+### Footfall (29.61260)
+
+Each additional customer visiting the store increases expected sales by approximately **29.61 units**, making footfall the strongest positive predictor in the model.
+
+---
+
+### Staff Count (2,293.57)
+
+Adding one additional staff member is associated with an estimated increase of **2,293.57 sales units**. However, this variable is **not statistically significant (p = 0.0945)**, so its effect should be interpreted cautiously.
+
+---
+
+# Dummy Variable Explanation
+
+A dummy variable is a numeric variable (typically 0 or 1) used to represent categorical information.
+
+In this model:
+
+* **0 = Reference Store Type**
+* **1 = Comparison Store Type**
+
+The coefficient measures the difference in expected sales between the comparison store type and the reference category.
+
+---
+
+# Reference Category Used
+
+The **reference category** is the store type coded as **0** during dummy variable creation.
+
+All comparisons for the dummy variable are made relative to this reference group.
+
+---
+
+# Final Model Selected
+
+**Multiple Regression Model**
+
+---
+
+# Reason for Selecting the Final Model
+
+The multiple regression model was selected because it provides the best overall predictive performance.
+
+### Reasons
+
+* Highest R² value (**79.15%**), indicating that it explains most of the variation in sales.
+* Includes multiple business factors instead of relying on a single predictor.
+* Marketing Spend and Footfall are statistically significant drivers of sales.
+* Dummy Store Type captures differences in sales performance across store formats.
+* Provides more reliable forecasts for business planning and decision-making than either simple regression model.
+
+Although Staff Count was included in the model, it was not statistically significant. Future models may be improved by incorporating additional variables such as promotions, seasonality, customer demographics, regional economic conditions, and competitor activity.
+
+Overall, the multiple regression model offers the most comprehensive understanding of the factors influencing sales and is recommended as the final model for forecasting and business decision-making.
